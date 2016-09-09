@@ -55,13 +55,13 @@ Execute all tasks in this pipeline instance. See `.pipeline()` API.
 
 ## .set(config, value) => Promise(out of pipeline) | Cache instance(in pipeline)
 Set `config.key` with `value` in redis.
-### parameters
+### [parameters]
 - config: **required**. A object withe required props `key`, `expire`. The `key` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `set` operation the `value` would expire.
 - value: **required**. Declare what value to set.
 
 ## .get(config, func) => Promise
 Get value of `config.key`. **No Pipeline Support**.
-### parameters
+### [parameters]
 - config: **required**. A object withe required props `key`, `expire`. The `key` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `set` operation the `value` would expire.
 - func: If `func` is provided, it must be a function with a Promise which has `.tap()` API returned(we highly recommend [bluebird](https://github.com/petkaantonov/bluebird)). 
 
@@ -69,7 +69,7 @@ To be declared, if we find the value of `config.key` in redis, it would update t
 
 ## .del(keys) => Promise(out of pipeline) | Cache instance(in pipeline)
 Del values of keys. 
-### parameters
+### [parameters]
 - keys: **required**. It can be an array with string or string[] items. Also, it can be just a pure string.
 
 ## .hset(config, value) => Promise(out of pipeline) | Cache instance(in pipeline)
@@ -80,7 +80,7 @@ API `hset()` to `set()` is just like `hset` to `set` in redis. The only diff is 
 
 ## .hdel(keyAndFileds) => Promise(out of pipeline) | Cache instance(in pipeline)
 API `hdet()` to `det()` is just like `hdet` to `det` in redis. 
-### parameters
+### [parameters]
 - keyAndFileds: It can be a object with props `key`(string or string[]) and `field`(string and string[]). It also can be an array with the object items declared above. By the way, `field` is **NOT** a required prop, and while missed, API `del()` would be applied instand of this API. That means, you can delete all hash values in the same `key` once for all.    
 
 ## .flushdb() => Promise(out of pipeline) | Cache instance(in pipeline)
