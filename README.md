@@ -30,6 +30,8 @@ cache.hget({
 }, () => Promise.resolve('value2'));
 ``` 
 
+If you want to `new` a Cache instance, the parameters you can pass to the constructor is totally the same with [ioredis](https://github.com/luin/ioredis/blob/master/API.md#new-redisport-host-options)(also with the same call pattern).
+
 # APIs
 ## .pipeline() => Cache instance
 Lunch a pipeline instance. It should be used with `.run` in pairs.
