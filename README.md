@@ -4,9 +4,10 @@ A clean redis cache lib based on [ioredis](https://github.com/luin/ioredis).
 # Features
 - Make cache much easier
 - Multiple ES6 features are applied
-- Most of the operations support [pipeline](https://github.com/luin/ioredis#pipelining)
-- The Promise lib in your code must support `.tap()`, we highly recommend [bluebird](https://github.com/petkaantonov/bluebird)
+- Most of the APIs support [pipeline](https://github.com/luin/ioredis#pipelining)
+- The Promise lib in your own code must support `.tap()`, we highly recommend [bluebird](https://github.com/petkaantonov/bluebird)
 - Chain style usage, whenever in or not in a pipeline
+- When query data from database, it can be auto-saved in cache without your own extra operation, making next queries much faster. 
 
 # Usage
 > $ npm install node-redis-cache --save
@@ -78,7 +79,7 @@ API `hset()` to `set()` is just like `hset` to `set` in redis. The only diff is 
 ## hdel(keyAndFileds) => Promise(out of pipeline) | Cache instance(in pipeline)
 API `hdet()` to `det()` is just like `hdet` to `det` in redis. 
 ### parameters
-- keyAndFileds: It can be a object with props `key`(string or string[]) and `field`(string and string[]). It also can be an array with the object items declared above. By the way, `field` is **NOT** a required prop, and while missed, API `del()` would be applied instand of this API. That means, you can delete all hash values in the same `key` once.    
+- keyAndFileds: It can be a object with props `key`(string or string[]) and `field`(string and string[]). It also can be an array with the object items declared above. By the way, `field` is **NOT** a required prop, and while missed, API `del()` would be applied instand of this API. That means, you can delete all hash values in the same `key` once for all.    
 
 ## flushdb() => Promise(out of pipeline) | Cache instance(in pipeline)
 Flush the db of redis.
@@ -86,6 +87,13 @@ Flush the db of redis.
 # ChangeLog
 ## V 0.0.1 - 2016.09.09
 * finish the basical lib
+
+# Join Me
+I'll keep updating APIs of redis to satisfy multiple needs. And you are welcomed to join me to make it better: Fork -> Edit -> Pull Request.
+
+Also, any issues are welcomed, I'm all ears. 
+
+:D 
 
 # License
 MIT
