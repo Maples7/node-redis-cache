@@ -72,18 +72,18 @@ Del values of keys.
 ### parameters
 - keys: **required**. It can be an array with string or string[] items. Also, it can be just a pure string.
 
-## hset(config, value) => Promise(out of pipeline) | Cache instance(in pipeline)
+## .hset(config, value) => Promise(out of pipeline) | Cache instance(in pipeline)
 API `hset()` to `set()` is just like `hset` to `set` in redis. The only diff is there is required prop `field` in `config`. So see `.set()` API for usage. And `config.field` can be provided the same way with `config.key`.
 
 ## hget(config, func) => Promise
 **No Pipeline Support**. API `hget()` to `get()` is just like `hget` to `get` in redis. The only diff is there is required prop `field` in `config`. So see `.get()` API for usage. And `config.field` can be provided the same way with `config.key`.
 
-## hdel(keyAndFileds) => Promise(out of pipeline) | Cache instance(in pipeline)
+## .hdel(keyAndFileds) => Promise(out of pipeline) | Cache instance(in pipeline)
 API `hdet()` to `det()` is just like `hdet` to `det` in redis. 
 ### parameters
 - keyAndFileds: It can be a object with props `key`(string or string[]) and `field`(string and string[]). It also can be an array with the object items declared above. By the way, `field` is **NOT** a required prop, and while missed, API `del()` would be applied instand of this API. That means, you can delete all hash values in the same `key` once for all.    
 
-## flushdb() => Promise(out of pipeline) | Cache instance(in pipeline)
+## .flushdb() => Promise(out of pipeline) | Cache instance(in pipeline)
 Flush the db of redis.
 
 # ChangeLog
