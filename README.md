@@ -75,7 +75,7 @@ Del values of keys.
 ## .hset(config, value) => Promise(out of pipeline) | Cache instance(in pipeline)
 API `hset()` to `set()` is just like `hset` to `set` in redis. The only diff is there is required prop `field` in `config`. So see `.set()` API for usage. And `config.field` can be provided the same way with `config.key`.
 
-## hget(config, func) => Promise
+## .hget(config, func) => Promise
 **No Pipeline Support**. API `hget()` to `get()` is just like `hget` to `get` in redis. The only diff is there is required prop `field` in `config`. So see `.get()` API for usage. And `config.field` can be provided the same way with `config.key`.
 
 ## .hdel(keyAndFileds) => Promise(out of pipeline) | Cache instance(in pipeline)
