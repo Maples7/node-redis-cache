@@ -1,0 +1,34 @@
+{
+  "name": "node-redis-cache",
+  "version": "0.0.1",
+  "description": "A clean redis cache lib based on ioredis",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Maples7/node-redis-cache/"
+  },
+  "bugs": {
+    "url": "https://github.com/Maples7/node-redis-cache/issues",
+    "email": "maples7@163.com"
+  },
+  "engines": {
+    "node": ">=6.1.0"
+  },
+  "keywords": [
+    "cache",
+    "redis",
+    "node",
+    "Express"
+  ],
+  "author": "Maples7 <maples7@163.com> | maples7.com",
+  "license": "MIT",
+  "dependencies": {
+    "ioredis": "^2.3.0",
+    "lodash": "^4.15.0"
+  },
+  "devDependencies": {}
+}
