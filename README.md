@@ -15,7 +15,7 @@ A clean redis cache lib based on [ioredis](https://github.com/luin/ioredis).
 ## Example
 What we export from the package is a Class, so you can use it like this in your own code:
 ```js
-let cache = new require('node-redis-cache')();
+let cache = new (require('node-redis-cache'))();
 let Promise = require('bluebird');
 
 cache.get({
@@ -85,6 +85,10 @@ API `hdet()` to `det()` is just like `hdet` to `det` in redis.
 Flush the db of redis.
 
 # ChangeLog
+## V 0.0.2 - 2016.09.09
+* update README
+* fix a bug in exmaple code
+
 ## V 0.0.1 - 2016.09.09
 * finish the basical lib
 
