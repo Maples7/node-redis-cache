@@ -106,6 +106,9 @@ To be declared, if we find the value of `config.key` in redis, it would update t
 ## .flushdb() => Promise(out of pipeline) | Cache instance(in pipeline)
 Flush the db of redis.
 
+# Practice Project
+[Maples7/weibo - Github](https://github.com/Maples7/weibo)
+
 # ChangeLog
 ## V 0.0.3 - 2016.09.10
 * add APIs: `sadd`, `smember` 
