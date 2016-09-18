@@ -1,6 +1,6 @@
 {
   "name": "node-redis-cache",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A clean redis cache lib based on ioredis",
   "main": "index.js",
   "scripts": {

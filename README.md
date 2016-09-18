@@ -87,6 +87,13 @@ API `hdet()` to `det()` is just like `hdet` to `det` in redis.
 parameters:
 - keyAndFields: **required**. It can be a object with props `key`(string or string[]) and `field`(string and string[]). It also can be an array with the object items declared above. By the way, `field` is **NOT** a required prop, and while missed, API `del()` would be applied instand of this API. That means, you can delete all hash values in the same `key` once for all.    
 
+## .hincrby(config, [increment = 1]) => Promise(out of pipeline) | Cache instance(in pipeline)
+Increase the number stored at `field` in the hash stored at `key` by `increment`.
+
+parameters:
+- config: **required**. A object withe required props `key`, `field` and `expire`. The `key` and `field` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `hincrby` operation the set would expire.
+- increment: declare how much to increase. Default to be `1`.
+
 ## .sadd(config, items) => Promise(out of pipeline) | Cache instance(in pipeline)
 Add items to set of redis.
 
@@ -110,6 +117,11 @@ Flush the db of redis.
 [Maples7/weibo - Github](https://github.com/Maples7/weibo)
 
 # ChangeLog
+## V 0.0.4 - 2016.09.18
+* add API `.hincrby`
+* add Practice Project
+* fix typo
+
 ## V 0.0.3 - 2016.09.10
 * add APIs: `sadd`, `smember` 
 
