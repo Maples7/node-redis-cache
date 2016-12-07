@@ -14,7 +14,7 @@ cache.pipeline().del('test1').hdel({
 
 See [pipeline](https://github.com/luin/ioredis#pipelining) for more information.
 
-**Attention**: To avoid mistakes, API `get` and `hget` are not supporting pipeline usage. So if you use these APIs while runing a pipeline instance, the tasks from these APIs will execute immediately and not add to the pipeline tasks. What's more, if you add `set` operation in a pipeline and want to `get` the same key just after that before `.run()`, you will not get what you want to `set`. The reason is distinct.
+**Attention**: To avoid mistakes, API `get`, `hget` and `smembers` are not supporting pipeline usage. So if you use these APIs while runing a pipeline instance, the tasks from these APIs will execute immediately and not add to the pipeline tasks. What's more, if you add `set` operation in a pipeline and want to `get` the same key just after that before `.run()`, you will not get what you want to `set`. The reason is distinct.
 
 ## .run() => Promise
 Execute all tasks in this pipeline instance. See `.pipeline()` API. 
@@ -25,14 +25,14 @@ Execute all tasks in this pipeline instance. See `.pipeline()` API.
 Set `config.key` with `value` in redis.
 
 parameters:
-- config: **required**. A object withe required props `key`, `expire`. The `key` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `set` operation the `value` would expire.
+- config: **required**. A object with required props `key`, `expire`. The `key` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `set` operation the `value` would expire.
 - value: **required**. Declare what value to set.
 
 ## .get(config, [func]) => Promise
 Get value of `config.key`. **No Pipeline Support**.
 
 parameters:
-- config: **required**. A object withe required props `key`, `expire`. The `key` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `get` operation the `value` would expire.
+- config: **required**. A object with required props `key`, `expire`. The `key` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `get` operation the `value` would expire.
 - func: If `func` is provided, it must be a function with a Promise which has `.tap()` API returned(we highly recommend [bluebird](https://github.com/petkaantonov/bluebird)). 
 
 To be declared, if we find the value of `config.key` in redis, it would update the expire time with `config.expire` and just return the value(wrapped in a Promise); If not and `func` is provided, we will execute `func()` and set `config.key` with the retuen of `func()`(also update expire time). If there is no `func`, a `null` would be returned(also wrapped in a Promise).
@@ -59,21 +59,21 @@ parameters:
 Increase the number stored at `field` in the hash stored at `key` by `increment`.
 
 parameters:
-- config: **required**. A object withe required props `key`, `field` and `expire`. The `key` and `field` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `hincrby` operation the set would expire.
+- config: **required**. A object with required props `key`, `field` and `expire`. The `key` and `field` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `hincrby` operation the set would expire.
 - increment: declare how much to increase. Default to be `1`.
 
 ## .sadd(config, items) => Promise(out of pipeline) | Cache instance(in pipeline)
 Add items to set of redis.
 
 parameters:
-- config: **required**. A object withe required props `key`, `expire`. The `key` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `sadd` operation the set would expire.
+- config: **required**. A object with required props `key`, `expire`. The `key` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `sadd` operation the set would expire.
 - items: **required**. A single basical type or a array of basical items.
 
-## .smember(config, [func]) => Promise(out of pipeline) | Cache instance(in pipeline)
-Get values of set labels `config.key`.
+## .smember(config, [func]) => Promise
+Get values of set labels `config.key`. **No Pipeline Support**.
 
 parameters:
-- config: **required**. A object withe required props `key`, `expire`. The `key` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `smember` operation the set would expire.
+- config: **required**. A object with required props `key`, `expire`. The `key` can be a pure string or string[]. The `expire` is a pure integer to declare how many **seconds** after `smember` operation the set would expire.
 - func: If `func` is provided, it must be a function with a Promise which has `.tap()` API returned(we highly recommend [bluebird](https://github.com/petkaantonov/bluebird)).
 
 To be declared, if we find the value of `config.key` in redis, it would update the expire time with `config.expire` and just return the value(wrapped in a Promise); If not and `func` is provided, we will execute `func()` and set `config.key` with the retuen of `func()`(also update expire time). If there is no `func`, a `null` would be returned(also wrapped in a Promise).
