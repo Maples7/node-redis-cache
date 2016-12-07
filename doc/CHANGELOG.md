@@ -1,5 +1,13 @@
 # Change Log of node-redis-cache
 
+## V 1.0.0 - 2016.12.07
+* fix a fatal bug of pipeline function: this.tasks -> this._tasks
+* remove pipeline support of .smembers API to avoid misusage
+* add unit tests for code
+* add Travis CI
+* adjust API Doc and README for a better reading experience
+* fix typos in README
+
 ## V 0.0.4 - 2016.09.18
 * add API `.hincrby`
 * add Practice Project

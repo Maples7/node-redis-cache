@@ -48,5 +48,10 @@ Also, any issues are welcomed, I'm all ears.
 
 :D 
 
+# Test
+> $ npm run test    
+
+*Make sure you have installed [Redis](https://redis.io/) and [mocha](https://mochajs.org/) before that.*
+
 # License
 MIT
