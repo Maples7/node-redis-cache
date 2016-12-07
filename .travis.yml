@@ -4,4 +4,4 @@ node_js:
 services:
   - redis-server
 after_script:
-  - npm run test-cov
+  - npm run coveralls
