@@ -1,5 +1,6 @@
 # node-redis-cache
-[![Build Status](https://travis-ci.org/Maples7/node-redis-cache.svg?branch=master)](https://travis-ci.org/Maples7/node-redis-cache)          
+[![Build Status](https://travis-ci.org/Maples7/node-redis-cache.svg?branch=master)](https://travis-ci.org/Maples7/node-redis-cache)
+[![Coverage Status](https://coveralls.io/repos/github/Maples7/node-redis-cache/badge.svg)](https://coveralls.io/github/Maples7/node-redis-cache)               
 
 A clean redis cache lib based on [ioredis](https://github.com/luin/ioredis).
 
