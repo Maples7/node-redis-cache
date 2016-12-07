@@ -3,3 +3,5 @@ node_js:
   - "6.1"
 services:
   - redis-server
+after_script:
+  - npm run test-cov
