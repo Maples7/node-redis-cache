@@ -1,6 +1,9 @@
 # node-redis-cache
 [![Build Status](https://travis-ci.org/Maples7/node-redis-cache.svg?branch=master)](https://travis-ci.org/Maples7/node-redis-cache)
-[![Coverage Status](https://coveralls.io/repos/github/Maples7/node-redis-cache/badge.svg)](https://coveralls.io/github/Maples7/node-redis-cache)               
+[![Coverage Status](https://coveralls.io/repos/github/Maples7/node-redis-cache/badge.svg)](https://coveralls.io/github/Maples7/node-redis-cache)
+[![npm version](https://badge.fury.io/js/node-redis-cache.svg)](https://badge.fury.io/js/node-redis-cache)           
+[![NPM](https://nodei.co/npm/node-redis-cache.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-redis-cache/)
+[![NPM](https://nodei.co/npm-dl/node-redis-cache.png?months=6&height=3)](https://nodei.co/npm/node-redis-cache/)          
 
 A clean redis cache lib based on [ioredis](https://github.com/luin/ioredis).
 
