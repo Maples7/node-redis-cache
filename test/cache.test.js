@@ -1,3 +1,5 @@
+'use strict';
+
 const Cache = require('../index.js');
 const should = require('should');
 const Promise = require('bluebird');
