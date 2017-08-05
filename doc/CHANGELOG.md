@@ -1,5 +1,8 @@
 # Change Log of node-redis-cache
 
+## V 1.1.0 - 2017.04.07    
+* add `'use strict';` for those strict mode projects
+
 ## V 1.0.0 - 2016.12.07
 * fix a fatal bug of pipeline function: this.tasks -> this._tasks
 * remove pipeline support of .smembers API to avoid misusage
